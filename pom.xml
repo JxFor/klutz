@@ -6,7 +6,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jxfor.klutz</groupId>
     <artifactId>klutz-all</artifactId>
-    <version>1.2.0</version>
+    <version>1.0.0</version>
+    <modules>
+        <module>server</module>
+    </modules>
     <packaging>pom</packaging>
 
     <properties>
@@ -20,6 +23,19 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <!-- 管理依赖版本号,子项目不会默认依赖 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.1.6.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
 
